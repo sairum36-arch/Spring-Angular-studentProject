@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+
+
+    <changeSet id="1.0.0-5-insert-admin-user" author="your_nickname">
+        <comment>Adding ADMIN user 'admin'</comment>
+        <insert tableName="passwords">
+            <column name="id" valueNumeric="1"/>
+            <column name="password" value="$2a$10$BaPyZxWBEh9Q5aXa1gg8OuhQouGaQCnidQvVPd91mbZ9hiCQEda1C"/>
+        </insert>
+        <insert tableName="users">
+            <column name="id" valueNumeric="1"/>
+            <column name="username" value="admin"/>
+            <column name="role" value="ADMIN"/>
+            <column name="enable" valueBoolean="true"/>
+            <column name="password_id" valueNumeric="1"/>
+        </insert>
+    </changeSet>
+
+
+    <changeSet id="1.0.0-6-insert-teacher1" author="your_nickname">
+        <comment>Adding TEACHER user 'teacher1' with profile</comment>
+        <insert tableName="passwords">
+            <column name="id" valueNumeric="2"/>
+            <column name="password" value="$2a$10$5hOs5z/h8JiXYKyBDLkENehQRIZKO8bdDdotRE6qRgJDxuU0vZk3O"/>
+        </insert>
+        <insert tableName="users">
+            <column name="id" valueNumeric="2"/>
+            <column name="username" value="teacher1"/>
+            <column name="role" value="TEACHER"/>
+            <column name="enable" valueBoolean="true"/>
+            <column name="password_id" valueNumeric="2"/>
+        </insert>
+        <insert tableName="teachers">
+            <column name="id" valueNumeric="1"/>
+            <column name="fio" value="Иванов Иван Иванович"/>
+            <column name="teacher_group" value="ИКБО-15-21"/>
+            <column name="phone_number" value="+79261112233"/>
+            <column name="user_id" valueNumeric="2"/>
+        </insert>
+    </changeSet>
+
+
+    <changeSet id="1.0.0-7-insert-teacher2" author="your_nickname">
+        <comment>Adding TEACHER user 'teacher2' with profile</comment>
+        <insert tableName="passwords">
+            <column name="id" valueNumeric="3"/>
+            <column name="password" value="$2a$10$fUa5nzc0pGRP8JSco4PeBud0QiEx4hfVuNKlv/Q.cUri1S9V98HBe"/>
+        </insert>
+        <insert tableName="users">
+            <column name="id" valueNumeric="3"/>
+            <column name="username" value="teacher2"/>
+            <column name="role" value="TEACHER"/>
+            <column name="enable" valueBoolean="true"/>
+            <column name="password_id" valueNumeric="3"/>
+        </insert>
+        <insert tableName="teachers">
+            <column name="id" valueNumeric="2"/>
+            <column name="fio" value="Петрова Мария Ивановна"/>
+            <column name="teacher_group" value="ИСТ-01-20"/>
+            <column name="phone_number" value="+79254445566"/>
+            <column name="user_id" valueNumeric="3"/>
+        </insert>
+    </changeSet>
+
+
+    <changeSet id="1.0.0-8-insert-student1" author="your_nickname">
+        <comment>Adding STUDENT user 'student1' with profile</comment>
+        <insert tableName="passwords">
+            <column name="id" valueNumeric="4"/>
+            <column name="password" value="$2a$10$Avi.3wj21HBAYePIfxw8UOdKb7JS.XskByyC/BeEZFvITkUaT15Ku"/>
+        </insert>
+        <insert tableName="users">
+            <column name="id" valueNumeric="4"/>
+            <column name="username" value="student1"/>
+            <column name="role" value="STUDENT"/>
+            <column name="enable" valueBoolean="true"/>
+            <column name="password_id" valueNumeric="4"/>
+        </insert>
+        <insert tableName="students">
+            <column name="id" valueNumeric="1"/>
+            <column name="fio" value="Сидоров Петр Иванович"/>
+            <column name="group_of_students" value="ИКБО-15-21"/>
+            <column name="phone_number" value="+79157778899"/>
+            <column name="user_id" valueNumeric="4"/>
+        </insert>
+    </changeSet>
+
+
+    <changeSet id="1.0.0-9-insert-student2" author="your_nickname">
+        <comment>Adding STUDENT user 'student2' with profile</comment>
+        <insert tableName="passwords">
+            <column name="id" valueNumeric="5"/>
+            <column name="password" value="$2a$10$Re/Wd/onGVgXK2J1xHHHZ.99sMEU.syDcqxXmueCq9iTyV6u0pAEm"/>
+        </insert>
+        <insert tableName="users">
+            <column name="id" valueNumeric="5"/>
+            <column name="username" value="student2"/>
+            <column name="role" value="STUDENT"/>
+            <column name="enable" valueBoolean="true"/>
+            <column name="password_id" valueNumeric="5"/>
+        </insert>
+        <insert tableName="students">
+            <column name="id" valueNumeric="2"/>
+            <column name="fio" value="Смирнова Анна Сергеевна"/>
+            <column name="group_of_students" value="ИКБО-15-21"/>
+            <column name="phone_number" value="+79161234567"/>
+            <column name="user_id" valueNumeric="5"/>
+        </insert>
+    </changeSet>
+
+
+    <changeSet id="1.0.0-10-insert-student3" author="your_nickname">
+        <comment>Adding STUDENT user 'student3' with profile</comment>
+        <insert tableName="passwords">
+            <column name="id" valueNumeric="6"/>
+            <column name="password" value="$2a$10$.uiW9p0kAxX2KWZ9Wv1WR.UqLPGCpvpNxDjdIfNiDt8rybZxtMr3u"/>
+        </insert>
+        <insert tableName="users">
+            <column name="id" valueNumeric="6"/>
+            <column name="username" value="student3"/>
+            <column name="role" value="STUDENT"/>
+            <column name="enable" valueBoolean="true"/>
+            <column name="password_id" valueNumeric="6"/>
+        </insert>
+        <insert tableName="students">
+            <column name="id" valueNumeric="3"/>
+            <column name="fio" value="Кузнецов Дмитрий Алексеевич"/>
+            <column name="group_of_students" value="ИНБО-05-21"/>
+            <column name="phone_number" value="+79039876543"/>
+            <column name="user_id" valueNumeric="6"/>
+        </insert>
+    </changeSet>
+</databaseChangeLog>
+
+    

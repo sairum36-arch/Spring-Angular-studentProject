@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+
+
+    <changeSet id="1.0.0-1-create-sequences" author="your_nickname">
+        <createSequence sequenceName="passwords_seq" incrementBy="50" startValue="1"/>
+        <createSequence sequenceName="users_seq" incrementBy="50" startValue="1"/>
+        <createSequence sequenceName="students_seq" incrementBy="50" startValue="1"/>
+        <createSequence sequenceName="teachers_seq" incrementBy="50" startValue="1"/>
+    </changeSet>
+
+
+    <changeSet id="1.0.0-2-create-passwords-table" author="your_nickname">
+        <createTable tableName="passwords">
+            <column name="id" type="bigint" defaultValueSequenceNext="passwords_seq">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="password" type="varchar(255)"/>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="1.0.0-3-create-users-table" author="your_nickname">
+        <createTable tableName="users">
+            <column name="id" type="bigint" defaultValueSequenceNext="users_seq">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="username" type="varchar(255)">
+                <constraints unique="true" nullable="false"/>
+            </column>
+            <column name="role" type="varchar(255)"/>
+            <column name="enable" type="boolean"/>
+            <column name="password_id" type="bigint">
+                <constraints nullable="false" foreignKeyName="fk_users_to_passwords" referencedTableName="passwords" referencedColumnNames="id"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="1.0.0-4-create-students-table" author="your_nickname">
+        <createTable tableName="students">
+            <column name="id" type="bigint" defaultValueSequenceNext="students_seq">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="fio" type="varchar(255)"/>
+            <column name="group_of_students" type="varchar(255)"/>
+            <column name="phone_number" type="varchar(255)"/>
+            <column name="user_id" type="bigint">
+                <constraints unique="true" foreignKeyName="fk_students_to_users" referencedTableName="users" referencedColumnNames="id"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="1.0.0-5-create-teachers-table" author="your_nickname">
+        <createTable tableName="teachers">
+            <column name="id" type="bigint" defaultValueSequenceNext="teachers_seq">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="fio" type="varchar(255)"/>
+            <column name="teacher_group" type="varchar(255)"/>
+            <column name="phone_number" type="varchar(255)"/>
+            <column name="user_id" type="bigint">
+                <constraints unique="true" foreignKeyName="fk_teachers_to_users" referencedTableName="users" referencedColumnNames="id"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+</databaseChangeLog>
+
+    
