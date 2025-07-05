@@ -6,7 +6,7 @@
         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
 
 
-    <changeSet id="1.0.0-5-insert-admin-user" author="your_nickname">
+    <changeSet id="1.0.0-5-insert-admin-user" author="nikita">
         <comment>Adding ADMIN user 'admin'</comment>
         <insert tableName="passwords">
             <column name="id" valueNumeric="1"/>
@@ -22,7 +22,7 @@
     </changeSet>
 
 
-    <changeSet id="1.0.0-6-insert-teacher1" author="your_nickname">
+    <changeSet id="1.0.0-6-insert-teacher1" author="nikita">
         <comment>Adding TEACHER user 'teacher1' with profile</comment>
         <insert tableName="passwords">
             <column name="id" valueNumeric="2"/>
@@ -45,7 +45,7 @@
     </changeSet>
 
 
-    <changeSet id="1.0.0-7-insert-teacher2" author="your_nickname">
+    <changeSet id="1.0.0-7-insert-teacher2" author="nikita">
         <comment>Adding TEACHER user 'teacher2' with profile</comment>
         <insert tableName="passwords">
             <column name="id" valueNumeric="3"/>
@@ -68,7 +68,7 @@
     </changeSet>
 
 
-    <changeSet id="1.0.0-8-insert-student1" author="your_nickname">
+    <changeSet id="1.0.0-8-insert-student1" author="nikita">
         <comment>Adding STUDENT user 'student1' with profile</comment>
         <insert tableName="passwords">
             <column name="id" valueNumeric="4"/>
@@ -91,7 +91,7 @@
     </changeSet>
 
 
-    <changeSet id="1.0.0-9-insert-student2" author="your_nickname">
+    <changeSet id="1.0.0-9-insert-student2" author="nikita">
         <comment>Adding STUDENT user 'student2' with profile</comment>
         <insert tableName="passwords">
             <column name="id" valueNumeric="5"/>
@@ -114,7 +114,7 @@
     </changeSet>
 
 
-    <changeSet id="1.0.0-10-insert-student3" author="your_nickname">
+    <changeSet id="1.0.0-10-insert-student3" author="nikita">
         <comment>Adding STUDENT user 'student3' with profile</comment>
         <insert tableName="passwords">
             <column name="id" valueNumeric="6"/>

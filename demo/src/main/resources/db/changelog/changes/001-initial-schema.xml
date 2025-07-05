@@ -6,7 +6,7 @@
         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
 
 
-    <changeSet id="1.0.0-1-create-sequences" author="your_nickname">
+    <changeSet id="1.0.0-1-create-sequences" author="nikita">
         <createSequence sequenceName="passwords_seq" incrementBy="50" startValue="1"/>
         <createSequence sequenceName="users_seq" incrementBy="50" startValue="1"/>
         <createSequence sequenceName="students_seq" incrementBy="50" startValue="1"/>
@@ -14,7 +14,7 @@
     </changeSet>
 
 
-    <changeSet id="1.0.0-2-create-passwords-table" author="your_nickname">
+    <changeSet id="1.0.0-2-create-passwords-table" author="nikita">
         <createTable tableName="passwords">
             <column name="id" type="bigint" defaultValueSequenceNext="passwords_seq">
                 <constraints primaryKey="true" nullable="false"/>
@@ -23,7 +23,7 @@
         </createTable>
     </changeSet>
 
-    <changeSet id="1.0.0-3-create-users-table" author="your_nickname">
+    <changeSet id="1.0.0-3-create-users-table" author="nikita">
         <createTable tableName="users">
             <column name="id" type="bigint" defaultValueSequenceNext="users_seq">
                 <constraints primaryKey="true" nullable="false"/>
@@ -39,7 +39,7 @@
         </createTable>
     </changeSet>
 
-    <changeSet id="1.0.0-4-create-students-table" author="your_nickname">
+    <changeSet id="1.0.0-4-create-students-table" author="nikita">
         <createTable tableName="students">
             <column name="id" type="bigint" defaultValueSequenceNext="students_seq">
                 <constraints primaryKey="true" nullable="false"/>
@@ -53,7 +53,7 @@
         </createTable>
     </changeSet>
 
-    <changeSet id="1.0.0-5-create-teachers-table" author="your_nickname">
+    <changeSet id="1.0.0-5-create-teachers-table" author="nikita">
         <createTable tableName="teachers">
             <column name="id" type="bigint" defaultValueSequenceNext="teachers_seq">
                 <constraints primaryKey="true" nullable="false"/>

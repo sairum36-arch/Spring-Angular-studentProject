@@ -8,11 +8,11 @@ import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2025-06-27T15:58:48+0300",
+    date = "2025-07-04T13:03:56+0300",
     comments = "version: 1.5.5.Final, compiler: IncrementalProcessingEnvironment from gradle-language-java-8.14.jar, environment: Java 21.0.7 (Oracle Corporation)"
 )
 @Component
-public class StudentMapperImpl implements StudentMapper {
+public class StudentCreationMapperImpl implements StudentCreationMapper {
 
     @Override
     public Student toEntity(StudentCreationRequest request) {
