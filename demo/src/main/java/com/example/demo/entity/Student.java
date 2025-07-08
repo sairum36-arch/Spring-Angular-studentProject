@@ -24,7 +24,7 @@ public class Student {
     @Column(name="group_of_students")
     private  String group;
     private String phoneNumber;
-    @JsonIgnore
+
     @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name="user_id", referencedColumnName = "id")
     private User user;

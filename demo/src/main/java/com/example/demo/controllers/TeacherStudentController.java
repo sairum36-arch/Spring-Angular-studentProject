@@ -21,22 +21,23 @@ public class TeacherStudentController {
 
     private final TeacherService teacherService;
 
+    //TODO: почитать о необходимости response entity (сделано)
     @GetMapping("/profile/me")
-    public ResponseEntity<TeacherProfileViewDto> getMyTeacherProfile(Principal principal) {
+    public TeacherProfileViewDto getMyTeacherProfile(Principal principal) {
         TeacherProfileViewDto profile = teacherService.getMyProfile(principal.getName());
-        return ResponseEntity.ok(profile);
+        return profile;
     }
 
     @GetMapping("/students/by-group/{group}")
-    public ResponseEntity<List<StudentTeacherViewDto>> getStudentsByGroup(@PathVariable String group, Principal principal) {
+    public List<StudentTeacherViewDto> getStudentsByGroup(@PathVariable String group, Principal principal) {
         List<StudentTeacherViewDto> students = teacherService.getStudentsByGroup(group, principal.getName());
-        return ResponseEntity.ok(students);
+        return students;
     }
     @PutMapping("/students/{studentId}")
-    public ResponseEntity<StudentTeacherViewDto> updateStudentByTeacher(@PathVariable Long studentId,
+    public StudentTeacherViewDto updateStudentByTeacher(@PathVariable Long studentId,
                                                                         @RequestBody StudentUpdateByTeacherDto dto,
                                                                         Principal principal) {
         StudentTeacherViewDto updatedStudent = teacherService.updateStudentByTeacher(studentId, dto, principal.getName());
-        return ResponseEntity.ok(updatedStudent);
+        return updatedStudent;
     }
 }

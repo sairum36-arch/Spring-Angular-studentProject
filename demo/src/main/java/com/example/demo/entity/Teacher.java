@@ -26,7 +26,7 @@ public class Teacher {
     @Column(name="teacher_group")
     private String group;
     private String phoneNumber;
-    @JsonIgnore
+   //TODO: убрать jsonignore (сделано)
     @OneToOne(fetch= FetchType.LAZY)
     @JoinColumn(name="user_id", referencedColumnName = "id")
     private User user;
